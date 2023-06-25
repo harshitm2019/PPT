@@ -1,0 +1,38 @@
+public class Q7{
+
+     void moveZeros(int arr[]){
+
+          int i = -1;
+          boolean mark = true;
+
+          for(int j = 0;j < arr.length;j++){
+
+               if(arr[j] != 0 && i != -1 ){
+            
+                     int temp = arr[i];
+                     arr[i++] = arr[j];
+                     arr[j] = temp;
+                     mark = false;
+               }
+               else if(arr[j] == 0 && mark != false){
+           
+                    i = j;
+                    mark = false;
+               }
+          }
+     }
+
+     public static void main(String[] args) {
+        
+          int arr[] = {2,1};
+
+          Q7 obj = new Q7();
+
+          obj.moveZeros(arr);
+
+          for (int i : arr) {
+            System.out.print(i + "\t");
+          }
+     }
+    
+}
